@@ -106,13 +106,13 @@ func (this *User) DoMessage(msg string) {
 
 		targerUser, ok := this.server.OnlineMap[targetName]
 		if !ok {
-			fmt.Println("no target user found!")
+			this.SendMsg("no target user found!")
 			return
 		}
 		//具体消息内容
 		content := strings.Split(msg, "|")[2]
 		if content == "" {
-			fmt.Println("msg cannot be empty!! ")
+			this.SendMsg("msg cannot be empty!! ")
 			return
 		}
 

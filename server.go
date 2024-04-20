@@ -95,7 +95,7 @@ func (this *Server) Handler(conn net.Conn) {
 		select {
 		case <-isLevel:
 			//啥都不做
-		case <-time.After(60 * time.Second):
+		case <-time.After(300 * time.Second):
 			//超时T下线
 			user.SendMsg("timeout !!")
 
